@@ -52,10 +52,10 @@ export class TasksComponent implements OnInit {
      () => {
         console.log('Tarefa atulizada no backend:', newTask);
         location.reload()
-        debugger;
+     
      },
      (error) => {
-       debugger;
+       
        console.error('Erro ao atualizar a tarefa:', error);
       }
 
@@ -72,10 +72,10 @@ export class TasksComponent implements OnInit {
       () => {
         console.log('Tarefa deletada do backend:', task);
         location.reload();
-        debugger;
+       
       },
       (error) => {
-        debugger;
+     
         console.error('Erro ao deletar a tarefa:', error);
       }
     );
