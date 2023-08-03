@@ -1,0 +1,44 @@
+nav {
+  background-color: #333;
+  padding: 10px;
+}
+
+ul {
+  display: flex; /* Altere aqui para flex para deixar o menu na horizontal */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-right: 1px solid #555; /* Altere de border-bottom para border-right para deixar a separação entre os itens do menu na horizontal */
+  transition: background-color 0.3s ease;
+}
+
+a:last-child {
+  border-right: none; /* Remova a borda direita do último item para evitar a linha extra no final */
+}
+
+a:hover {
+  background-color: #555;
+}
+
+/* Estilizar o menu quando estiver na rota ativa */
+a.router-link-active {
+  background-color: #555;
+}
+
+/* Estilos para os ícones */
+i {
+  margin-right: 10px;
+}

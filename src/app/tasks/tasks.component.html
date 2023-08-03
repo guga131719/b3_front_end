@@ -1,0 +1,44 @@
+<h2>Tarefas</h2>
+<button type="button" class="btn-create" (click)="openEditModal(null,'create')">Criar</button>
+<table>
+  <tr>
+    <th>Descrição</th>
+    <th>Data</th>
+    <th>Status</th>
+    <th>Ações</th>
+  </tr>
+  <tr *ngFor="let task of tasks">
+    <td>{{ task.description }}</td>
+    <td>{{ formatDate(task.date) }}</td>
+    <td>{{ task.status }}</td>
+    <td>
+      <button (click)="openEditModal(task,'edit')">Editar</button>
+      <button (click)="DeleteItem(task)" class="delete">Deletar</button>
+    </td>
+  </tr>
+</table>
+
+
+<div class="modal-overlay" [class.open]="showModal">
+  <div class="modal-container">
+    <form id="formSend">
+      <input hidden id="id" disabled>
+      <label>Descrição:</label>
+      <input id="description" required>
+      <br>
+      <label>data:</label>
+      <input type="date" id="date" required>
+      <br>
+      <label>status:</label>
+      <select id="status">
+        <option value="Nao iniciado">Nao iniciado</option>
+        <option value="Fazendo">Fazendo</option>
+        <option value="Finalizado">Finalizado</option>
+      </select>
+      <br>
+      <br>
+      <button type="button" class="btn-cancel" (click)="closeModal()">Cancelar</button>
+      <button type="button" class="btn-save" (click)="saveChanges()">Salvar</button>
+    </form>
+  </div>
+</div>
